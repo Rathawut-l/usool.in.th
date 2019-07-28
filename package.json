@@ -1,0 +1,13 @@
+{
+  "name": "usool.in.th",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Rathawut Lertsuksakda",
+  "devDependencies": {
+    "vuepress": "^1.0.2"
+  },
+  "scripts": {
+    "docs:dev": "vuepress dev docs",
+    "docs:build": "vuepress build docs"
+  }
+}
