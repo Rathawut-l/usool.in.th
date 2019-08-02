@@ -3,6 +3,13 @@ module.exports = {
   description: 'เว็บไซต์์ Usool.in.th',
   head: [
     ['link', { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Kanit' }],
+    ['link', { 
+      rel: 'stylesheet', 
+      href: 'https://unpkg.com/purecss@1.0.1/build/pure-min.css', 
+      integrity: 'sha384-oAOxQR6DkCoMliIh8yFnu25d7Eq/PHS21PClpwjOTeU2jRSq11vu66rf90/cZr47',
+      crossorigin: 'anonymous',
+    }],
+    ['link', { rel: 'stylesheet', href: 'https://unpkg.com/purecss@1.0.1/build/grids-responsive-min.css' }],
   ],
   plugins: [
     '@vuepress/plugin-last-updated',
@@ -20,10 +27,8 @@ module.exports = {
         collapsable: false,
         children: [
           {
-            title: 'กุนูตซุบฮ์',
-            children: [
-              '/kilaf/qunoot/',
-            ],
+            title: 'กุนูตซุบฮ์ปัญหาที่ต้องอาศัยการวินิจฉัย',
+            path: '/kilaf/qunoot/',
           },
         ],
       },
