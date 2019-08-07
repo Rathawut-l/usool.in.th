@@ -58,7 +58,7 @@ export default {
 
 <style scoped>
 .post {
-  margin: 0 5px;
+  margin: 0 5px 20px;
 }
 .post > .post-title {
   font-size: 20px;
