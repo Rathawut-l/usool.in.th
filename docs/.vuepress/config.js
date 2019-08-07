@@ -22,6 +22,7 @@ module.exports = {
   },
   themeConfig: {
     logo: '/assets/img/logo.png',
+    sidebarDepth: 3,
     nav: [
       { text: 'หน้าแรก', link: '/' },
       { text: 'ปัญหาเห็นต่าง', link: '/kilaf/' },

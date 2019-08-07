@@ -65,6 +65,6 @@ export default {
   margin-top: 8px;
 }
 .image-container {
-  border: 1px solid  black;
+  border: 1px solid #2c3e50;
 }
 </style>
