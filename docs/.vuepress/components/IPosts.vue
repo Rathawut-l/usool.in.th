@@ -1,24 +1,25 @@
 <template>
-  <div class="pure-g" v-if="posts.length">
+  <div class="pure-g posts" v-if="posts.length">
     <h2 class="pure-u-1" v-if="title">
       {{ title }}
     </h2>
-    <div class="pure-u-1 pure-u-md-1-2" v-for="post in posts">
-      <router-link :to="post.path" v-if="post.frontmatter.image">
-        <div>
-          <img :src="$withBase(post.frontmatter.image)" alt="">
+    <div class="pure-u-1 pure-u-md-1-3" v-for="post in posts">
+      <div class="post">
+        <router-link :to="post.path">
+          <div class="image-container">
+            <img :src="$withBase(post.frontmatter.image)" alt="" v-if="post.frontmatter.image">
+            <img :src="$themeConfig.logo" alt="Logo" v-else>
+          </div>
+        </router-link>
+        <div class="post-title">
+          <router-link :to="post.path">
+            {{ post.title }}
+          </router-link>
         </div>
-      </router-link>
-      <h4>
         <router-link :to="post.path">
-          {{ post.title }}
+          <small>Updated At: {{ post.lastUpdated }}</small>
         </router-link>
-      </h4>
-      <p>
-        <router-link :to="post.path">
-          Last Updated: {{ post.lastUpdated }}
-        </router-link>
-      </p>
+      </div>
     </div>
   </div>
 </template>
@@ -35,6 +36,10 @@ export default {
       type: String,
       default: '/',
     },
+    maximum: {
+      type: Number,
+      default: 0,
+    },
   },
   computed: {
     posts() {
@@ -45,8 +50,21 @@ export default {
         .sort((a, b) => {
           return new Date(b.lastUpdated) - new Date(a.lastUpdated)
         })
-      return posts
+      return this.maximum > 0 ? posts.slice(0, this.maximum) : posts
     },
   },
 }
 </script>
+
+<style scoped>
+.post {
+  margin: 0 5px;
+}
+.post > .post-title {
+  font-size: 20px;
+  margin-top: 8px;
+}
+.image-container {
+  border: 1px solid  black;
+}
+</style>

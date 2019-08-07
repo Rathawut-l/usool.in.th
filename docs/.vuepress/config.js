@@ -15,7 +15,13 @@ module.exports = {
     '@vuepress/plugin-last-updated',
     require('./plugins/plugin-add-dir-auto'),
   ],
+  markdown: {
+    extendMarkdown: md => {
+      md.use(require('markdown-it-footnote'))
+    },
+  },
   themeConfig: {
+    logo: '/assets/img/logo.png',
     nav: [
       { text: 'หน้าแรก', link: '/' },
       { text: 'ปัญหาเห็นต่าง', link: '/kilaf/' },
@@ -23,9 +29,12 @@ module.exports = {
     sidebar: [
       {
         title: 'ปัญหาเห็นต่าง',
-        path: '/kilaf/',
         collapsable: false,
         children: [
+          {
+            title: 'อารัมภบท',
+            path: '/kilaf/',
+          },
           {
             title: 'กุนูตซุบฮ์ปัญหาที่ต้องอาศัยการวินิจฉัย',
             path: '/kilaf/qunoot/',
