@@ -29,6 +29,20 @@ module.exports = {
     ],
     sidebar: [
       {
+        title: 'ภาษาอาหรับ',
+        collapsable: false,
+        children: [
+          {
+            title: 'บทที่ 1 ประเภทของคำและลักษณะของคำนาม',
+            path: '/arabic/',
+          },
+          {
+            title: 'บทที่ 2 การเปลี่ยนแปลงส่วนท้ายของคำ',
+            path: '/arabic/2',
+          },
+        ],
+      },
+      {
         title: 'ปัญหาเห็นต่าง',
         collapsable: false,
         children: [
